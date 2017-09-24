@@ -1,0 +1,7 @@
+/* IE和Firefox中div定位样式 */
+.top_left {max-width:400px; top:0; left:0; position:fixed; z-index:9999}
+.top_right {max-width:400px; top:0; right:0; position:fixed; z-index:9999}
+.bottom_left {max-width:400px; bottom:0; left:0; position:fixed; z-index:9999}
+.bottom_right {max-width:400px; bottom:0; right:0; position:fixed; z-index:9999}
+.top_center {max-width:400px; top:0; left:50%; position:fixed; margin-left:-150px; z-index:9999}
+.bottom_center {max-width:400px; bottom:0; left:50%; position:fixed; margin-left:-150px; z-index:9999}

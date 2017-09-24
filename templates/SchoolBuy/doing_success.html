@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ mes }}成功</title>
+</head>
+<body>
+<p style="text-indent: 2em; margin-top: 30px;">
+{{ mes }}成功！系统将在 <span id="time">3</span> 秒钟后自动跳转到首页，如果未能跳转，<a href="/" title="点击访问">请点击</a>。</p>
+<script type="text/javascript">
+    delayURL();
+    function delayURL() {
+        var delay = document.getElementById("time").innerHTML;
+ var t = setTimeout("delayURL()", 1000);
+        if (delay > 0) {
+            delay--;
+            document.getElementById("time").innerHTML = delay;
+        } else {
+     clearTimeout(t);
+            window.location.href = "/";
+        }
+    }
+</script>
+</body>
+</html>

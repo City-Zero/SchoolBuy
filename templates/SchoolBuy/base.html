@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="icon" href="/static/SchoolBuy/images/favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.common.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
+    <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css" rel="stylesheet">
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
+    <script src="https://magicbox.bkclouds.cc/static_api/v3/bk/js/bk.js"></script>
+</head>
+
+
+<body style="padding-top: 55px">
+<!--HTML-->
+    <nav>
+    	<div class="navbar king-horizontal-nav1 navbar-fixed-top" id="horizontal_nav_demo10">
+    		<div class="navbar-header">
+    			<a href="/" class="navbar-brand">
+    				<img src="/static/SchoolBuy/images/logogo.png" width="90" height="30" class="logo"/>
+    			</a>
+    		</div>
+    		<ul class="nav navbar-nav">
+                <li class="active"><a href="/">首页</a></li>
+    			<li><a href="/push_goods/">发布商品</a></li>
+    			<li><a href="/all/">全部商品</a></li>
+    			<li class="navslip" id="navslip"></li>
+    		</ul>
+    		<div class="navbar-header pull-right">
+    			<ul class="nav">
+    				<li class="user-info">
+
+    					{% if request.session.nick %}
+    					<a href="/me/">
+
+    						<span class="f12">{{ request.session.nick }}</span><img src="{{ request.session.avatar }}" class="img-rounded"/>
+                        </a>
+                            <a href="/logout/">退出</a>
+
+
+                        {% else %}
+                        <a href="/login/">
+                        登录/注册
+    					</a>
+                        {% endif %}
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    </nav>
+
+
+<script type="text/javascript">
+	//horizontal_nav_demo10_js_start
+	$(function(){
+		var slip=$("#navslip");
+		var flag=true;
+		$(".navbar-nav").on("mouseenter","li",function(){
+			slip.show();
+			if(flag){
+				slip.css({width:$(this).width(),left:parseInt($(this).position().left)})
+				flag=false;
+			}else{
+				slip.stop().animate({
+					width:$(this).width(),
+					left:parseInt($(this).position().left)
+				})
+			}
+		});
+		$(".navbar-nav").on("mouseleave",function(){
+			slip.hide();
+			flag=true;
+		});
+	});
+</script>
+<br>
+{% block detial %}{% endblock %}
+
+<hr color="#d8d8d8">
+<p align="center"><font face="楷体"size="2"color="#5e717f">李余通｜Copyright &copy; flycold.cn,All Rights Reserved</font></p>
+<a href="mailto:liyutong@xiyoulinux.org"><p align="center"><font face="楷体"size="2"color="#5e717f">联系我们</font></p></a>
+
+</body>
+</html>

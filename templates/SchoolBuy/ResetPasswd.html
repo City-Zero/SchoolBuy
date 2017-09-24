@@ -1,0 +1,66 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}重置密码{% endblock %}
+
+{% block detial %}
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="king-block king-block-bordered">
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">重置密码</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+                <form class="form-horizontal" method="POST" action="/comm/passwd/">
+
+                    {{ csrf_input }}
+
+                    <div class="form-group">
+
+
+                        <label for="inputCount3" class="col-sm-3 control-label">新密码：</label>
+
+                        <div class="col-sm-7">
+                            {{ form.code }}
+
+                            {{ form.new_passwd }}
+                            <p class="help-block">{{ form.new_passwd.errors.as_text() }}</p>
+
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <label for="inputCount3" class="col-sm-3 control-label">重复：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ form.re_passwd }}
+                            <p class="help-block">{{ form.re_passwd.errors.as_text() }}</p>
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <input type="submit" name="submit" class="king-btn king-success mr10" value="提交" />
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,180 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}修改用户信息{% endblock %}
+{% block detial %}
+<img src="{{ profile.Avatar }}" align="center" height="50" width="50">
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="king-block king-block-bordered">
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">修改个人信息</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+                <form class="form-horizontal" method="POST" enctype="multipart/form-data">
+
+                    {{ csrf_input }}
+
+                    <div class="form-group">
+
+                        <label for="inputCount3" class="col-sm-3 control-label">头像：</label>
+
+                        <div class="col-sm-7">
+
+                            <div class="demo" id="kendo_upload_demo1">
+
+                                <input name="Avatar" class="file_input" type="file" />
+                                <p class="help-block">注意，我们只会接收.jpg和.png图片</p>
+
+                            </div>
+
+                        </div>
+
+                        <label for="inputCount3" class="col-sm-3 control-label">昵称：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ form.Nick }}
+                            <p class="help-block">{{ form.Nick.errors.as_text() }}</p>
+
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <input type="submit" name="submit" class="king-btn king-success mr10" value="提交" />
+                        </div>
+
+
+                    </div>
+
+
+
+                </form>
+            </div>
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">修改密码</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+                <form class="form-horizontal" method="POST" action="/me/edit/passwd/">
+
+                    {{ csrf_input }}
+
+                    <div class="form-group">
+
+
+                        <label for="inputCount3" class="col-sm-3 control-label">原密码：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ pass_form.old_passwd }}
+                            <p class="help-block">{{ pass_form.old_passwd.errors.as_text() }}</p>
+
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <label for="inputCount3" class="col-sm-3 control-label">新密码：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ pass_form.new_passwd }}
+                            <p class="help-block">{{ pass_form.new_passwd.errors.as_text() }}</p>
+
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <label for="inputCount3" class="col-sm-3 control-label">重复：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ pass_form.re_passwd }}
+                            <p class="help-block">{{ pass_form.re_passwd.errors.as_text() }}</p>
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <input type="submit" name="submit" class="king-btn king-success mr10" value="提交" />
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">绑定邮箱</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+                {% if user.email %}
+
+                    <label  class="col-sm-3"></label>{{ user.email }}<a href="/me/del/email/" onClick="return confirm('确定?');">解绑</a>
+
+                {% else %}
+
+                <form class="form-horizontal" method="POST" action="/me/edit/email/">
+
+                    {{ csrf_input }}
+
+                    <div class="form-group">
+
+
+                        <label for="inputCount3" class="col-sm-3 control-label">绑定邮箱：</label>
+
+                        <div class="col-sm-7">
+
+                            {{ email_form.email }}
+                            <p class="help-block">{{ email_form.email.errors.as_text() }}</p>
+
+                        </div>
+
+
+                        <span class="text-danger mt5 fl">*</span>
+
+                        <div class="col-sm-7 col-sm-offset-3">
+                            <input type="submit" name="submit" class="king-btn king-success mr10" value="提交" />
+                        </div>
+
+                    </div>
+
+                </form>
+
+                {% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+$(document).ready(function() {
+    $("#kendo_upload_demo1 .file_input").kendoUpload();
+});
+
+</script>
+
+{% endblock %}

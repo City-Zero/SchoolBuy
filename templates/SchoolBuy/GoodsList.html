@@ -1,0 +1,85 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}所有商品{% endblock %}
+{% block detial %}
+
+    {% block head %}
+<div class="row" align="center">
+    <form class="form-inline" method="get">
+      <div class="form-group mr10">
+        <label for="exampleInputName2">商品名：</label>
+          <input type="text" name="name" class="form-control" id="id_name" placeholder="暂时只能查询单个">
+      </div>
+
+      <div class="form-group mr5">
+        <label for="exampleInputEmail2">类型：</label>
+        {{ form.type }}
+      </div>
+        <a href="javascript:clear()" class="king-btn king-bg-red">清空</a>
+      <input type="submit" class="king-btn king-info">
+    </form>
+</div>
+<script type="text/javascript">
+    function clear() {
+        var name = document.getElementById('id_name');
+        var type = document.getElementById('id_type');
+        name.value="";
+        type.value="";
+    }
+</script>
+    {% endblock %}
+
+    <hr color="#d8d8d8">
+
+
+
+<div class="container-fluid" style="margin-top:20px;">
+    <div class="row">
+{% for i in goods %}
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="king-block king-block-themed mb30">
+                <div class="king-block-header king-info">
+                    <a href="/goods/{{ i.id }}" class="king-block-title">{{ i.Title }}</a>
+                </div>
+                <div class="king-block-content">
+                    {% if i.First_pic %}
+                    <img src="{{ i.First_pic.ImgSma }}">
+
+                    {% else %}
+                    <img src = "/static/SchoolBuy/images/no_image.png">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+{% endfor %}
+
+    </div>
+</div>
+
+{% block delpagination %}
+<nav style="text-align: center">
+<ul class="pagination pagination-lg">
+    {% if page.hasHead %}
+    <li><a href="?page=1{{ page.canshu }}">首页</a></li>
+    {% endif %}
+
+    {%if page.now != 1%}
+    <li><a href="?page={{ page.now - 1 }}{{ page.canshu }}">&laquo;</a></li>
+    {%endif%}
+
+    {% for i in page.list %}
+        <li {% if page.now == i %}class="active"{% endif %}><a href="?page={{ i }}{{ page.canshu }}">{{ i }}</a></li>
+    {% endfor %}
+
+    {% if page.now != page.end %}
+        <li><a href="?page={{ page.now + 1 }}{{ page.canshu }}">&raquo;</a></li>
+    {% endif %}
+
+    {% if page.hasEnd %}
+    <li><a href="?page={{ page.end }}{{ page.canshu }}">尾页</a></li>
+    {% endif %}
+</ul>
+</nav>
+{% endblock %}
+{% endblock %}

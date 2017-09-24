@@ -1,0 +1,62 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}注册{% endblock %}
+{% block detial %}
+<link rel="stylesheet" type="text/css" href="/static/SchoolBuy/css/login.css" />
+<div class="wrapper">
+    <div class="content">
+        <div id="form_wrapper" class="form_wrapper">
+            <form class="login active" method="POST">
+                {{ csrf_input }}
+                <h3>Register</h3>
+                <div>
+                    <label>用户名:</label>
+                    {{ form.username }}
+                    <label>{{ form.username.errors.as_text() }}</label>
+                </div>
+                <div>
+                    <label>密码:</label>
+                    {{ form.passwd }}
+                    <label>{{ form.passwd.errors.as_text() }}</label>
+                </div>
+                <div>
+                    <label>重复密码:</label>
+                    {{ form.repasswd }}
+                    <label>{{ form.repasswd.errors.as_text() }}</label>
+                </div>
+                <div class="column">
+
+                    <div>
+                        <label>验证码:</label>
+                        <input type="text" name="code" maxlength="4" required/>
+                        <label>{% if code_err %}验证码错误！{% endif %}</label>
+                    </div>
+
+                </div>
+                <div class="column">
+                    <div>
+                        <label><br></label>
+                        <img src="/create_code/" id="code" onclick="javascript:code.src='/create_code/?tm='+Math.random()">
+                    </div>
+                </div>
+
+
+
+
+                <div class="bottom">
+                <a href="/static/SchoolBuy/README.html" title="网站条款">注册即认为您已同意网站条款</a>
+                    <input type="submit" value="Register">
+                    <a href="/login/" rel="login" class="linkform">已经有帐号了？登录</a>
+                    <div class="clear"></div>
+                </div>
+
+
+            </form>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+
+
+

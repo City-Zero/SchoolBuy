@@ -1,0 +1,12 @@
+{% extends "SchoolBuy/GoodsList.html" %}
+{% block title %}{{ user.Nick }}{% endblock %}
+
+    {% block head %}
+        <div align="center">
+            <a>{{ profile.Nick }}</a>
+            <img src="{{ profile.Avatar }}">
+        </div>
+
+    {% endblock %}
+
+{% block delpagination %}{% endblock %}

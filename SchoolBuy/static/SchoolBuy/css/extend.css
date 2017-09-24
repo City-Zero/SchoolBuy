@@ -1,0 +1,202 @@
+.container{
+	width:auto;
+	min-width: 1200px;
+	max-width:1400px;
+}
+.panelbar_head,.panelbar_bottom { background-color:#526f8f; background-repeat:repeat-x; line-height:16px; min-height:16px; padding:8px 15px; border-radius:0px 0px 0 0; border:1px solid #2f4c67; background-image:-webkit-linear-gradient(top, #4f7091 30%,#32516e 100%);
+background-image:-ms-linear-gradient(top, #4f7091 30%,#32516e 100%);background-image:-o-linear-gradient(top, #4f7091 30%,#32516e 100%);filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f7091', endColorstr='#32516e',GradientType=0 )}
+.panelbar_bottom { height:10px; padding:0; border-radius:0 0 0px 0px}
+.k-widget.k-tooltip-validation{background-color: #ffe13a;}
+.backcolor_common {background-color: #f1f1f1;color: #333;border:1px #ddd solid;}
+.percent_30{width: 30%;}
+.mt10 {margin-top:10px}
+.ml10 {margin-left:10px}
+.mr10 {margin-right:10px}
+.ml5 {margin-left:5px}
+.mt30 {margin-top:30px;}
+.pg10 {padding:10px}
+.pg5 {padding:5px}
+.pt5 {padding-top:5px}
+.pt10 {padding-top:10px}
+.pt20 {padding-top:20px}
+.pg10 {padding:10px}
+.pb10 {padding-bottom:10px}
+.upload-success p, .new-mail p, .wrong-pass p, .warning p{
+	font-size: inherit;
+}
+/*自定义样式*/
+.new_css a{ color: #F00 !important;}
+.new_css a.active{ color: #FFF !important;}
+/* 返回按钮*/
+.btn_back{position:relative; z-index:99; display:block; float:right;margin: 0 0 5px; width:52px; height:24px; line-height:22px; color:#fff; font-size:14px; text-indent:1.2em; background:url(../images/bg_back_on.png) no-repeat;}
+.btn_back:hover{background:url(../images/bg_back.png) no-repeat; color:#80be2b;}
+/*用户当前位置*/
+.breadcrumb{display:inline-block; background-color: #FFFFFF; line-height:20px; margin:0 20px 5px 0; padding:0; padding:0; font-size:13px; color:#667; border-radius:0;}
+.breadcrumb > i{font-style: normal;}
+.breadcrumb > ul{float:left;}
+.breadcrumb > ul > li{display:inline-block; padding:0 3px;}
+.breadcrumb > ul > li.active{color:#667;}
+.breadcrumb > ul > li > a{color:#f07d0e; text-decoration:none;}
+.breadcrumb > ul > li > a:hover{color:#f07d0e;}
+.breadcrumb i{display:block; float:left;}
+/* 倒计时样式 */
+#countdown_id{
+	background:url('../countdown/page_bg_center.jpg') no-repeat center center;
+	padding: 30px 0 30px;
+	font:14px/1.3 'Segoe UI',Arial, sans-serif;
+}
+#note{
+	color: #666666;
+	font-size: 12px;
+	margin: 0 auto;
+	padding: 4px;
+	text-align: center;
+	text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
+	width: 400px;
+}
+.line {
+	margin: 20px 0;
+	width: 432px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 1px;
+	background-color: rgba(245, 242, 242, 0.43);
+	border-bottom: rgba(221, 221, 221, 0);
+}
+/* 边框 */
+.no_border,.border_no{ border:none}
+.no_radius, .no_radius a {-webkit-border-radius:0px; -moz-border-radius:0px; border-radius:0px}
+.border {border:#ddd 1px solid}
+.border_add{border:#d7dee4 1px solid}
+.border_blue_common{border:#c1cfda}
+.border_radius {border:#ddd 1px solid; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px}
+.border_left_no {border-left:none}
+.border_right_no {border-right:none}
+.border_bottom_no,.border-bottom-no {border-bottom:none}
+.border_top_no {border-top:none}
+.border_left {border-left:1px solid #ddd}
+.border_right{border-right:1px solid #ddd}
+.border_top {border-top:1px solid #ddd}
+.border_bottom {border-bottom:1px solid #ddd}
+.border_dotted{ border:1px dotted #ddd}
+.border_dotted_bottom{ border-bottom:1px dotted #ddd}
+
+/* 文本样式定义--begin
+ --------------------------------*/
+.t_s20 {font-size:20px}
+.t_s19 {font-size:19px}
+.t_s18 {font-size:18px}
+.t_s17 {font-size:17px}
+.t_s16 {font-size:16px}
+.t_s15 {font-size:15px}
+.t_s14 {font-size:14px}
+.t_s13 {font-size:13px}
+.t_s12 {font-size:12px}
+.t_l {text-align:left} 
+.t_c {text-align:center} 
+.t_r {text-align:right} 
+.t_b {font-weight:bold}
+.t_it {font-style:italic}
+.t_n {font-weight:normal} 
+.t_no {text-decoration:none}
+.t_udl {text-decoration:underline} 
+.t_del {text-decoration:line-through} 
+.t_unbr {overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.t_br {word-wrap:break-word; word-break:normal}
+.t_unbr_auto{ white-space:nowrap; overflow:visible;}
+.align {font-size:12px}
+.align label input {display:block}
+.align label {display:block; margin-left:20px !important; margin-left:11px; margin-top:-16px}
+
+/* 执行流程图样式--begin
+ ---------------------------------*/
+.flow_chart {margin:0 auto; *padding:25px; padding:15px 30px 30px 30px;width:auto; min-width:200px; height:auto; background:#FFFAF0; overflow:auto; border:1px solid #FFEFDB; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px}
+.flow_chart label {text-align:center; font-size:16px; font-weight:bold}
+button.close {margin:-5px}
+.flow_chart ul {list-style:none; display:block; margin:0}
+.flow_chart ul p {text-align:center; margin-bottom:1px; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px;font-size:14px;font-family:"微软雅黑"; max-height:58px; overflow:hidden}
+.flow_chart li .alert-help {border:1px solid #cccccc}
+.flow_chart li .mg_up {margin-top:-33px}
+.flow_chart li .alert-success {border:1px solid #C7DDBC}
+.flow_chart li .alert-info {border:1px solid #A0B1DE}
+.flow_chart li .alert-error {border:1px solid #f7a9ae}
+.flow_chart li .alert-warning {border:1px solid #E4E2B8}
+.flow_chart .success_ico {background:transparent url(../img/arrow/arrow_down4.png) center no-repeat; width:32px; height:32px; margin:1px auto}
+.flow_chart .error_ico {background:transparent url(../img/arrow/arrow_down2.png) center no-repeat; width:32px; height:32px; margin:1px auto}
+.flow_chart .success_green_ico {background:transparent url(../img/arrow/arrow_down1.png) center no-repeat; width:32px; height:32px; margin:1px auto}
+.flow_chart .success_blue_ico {background:transparent url(../img/arrow/arrow_down3.png) center no-repeat; width:32px; height:32px; margin:1px auto}
+/* 执行流程图样式--end
+
+
+/* 图标 */
+.ch_ico_attention, .ch_ico_check, .ch_ico_error, .ch_ico_help, .ch_ico_information, .ch_ico_ok, .ch_message_attention, .ch_message_check,
+.ch_message_error, .ch_message_help, .ch_message_information, .ch_message_ok, .ch_ico, .ch_message, .ico, .message ,.check_img,.check_img_check{background:url(../img/icons.png) no-repeat}
+.ch_ico_attention, .ch_ico_check, .ch_ico_error, .ch_ico_help, .ch_ico_information, .ch_ico_ok, .ch_ico, .ico {display:inline-block;
+width:16px; height:16px; text-indent:99px; overflow:hidden; background-repeat:no-repeat; vertical-align:middle}
+.ch_ico_attention, .ch-ico.ch_attention, .ico.attention {background-position:-77px -110px}
+.ch_ico_check, .ch_ico.ch_check, .ico.check {background-position:-43px -144px}
+.ch_ico_error, .ch_ico.ch_error, .ico.error {background-position:-179px -9px}
+.ch_ico_help, .ch_ico.ch_help, .ico.help {background-position:-111px -76px}
+.ch_ico_information, .ch_ico.ch_information, .ico.information {background-position:-145px -42px}	
+.ch_ico_ok, .ch_ico.ch_ok, .ico.ok {background-position:-9px -178px; height:17px}
+.ico_process,.ico_process_active{background-image: url(../img/charflow_inline_img.png); background-repeat: no-repeat; height:45px; line-height:45px; width:45px; padding-right:3px; color:#FFF; text-align:center; font-size:24px;}
+.ico_process_active{ background-position: 0px -45px; }
+.check_img, .check_img_check{display:inline-block; width:20px; height:20px; background-position:0 0}
+.check_img_check{background-position:-20px 0;}
+
+/* 消息图标 */
+.ch_message_attention, .ch_message_check, .ch_message_error, .ch_message_help, .ch_message_information, .ch_message_ok, .ch_message {border-radius:5px;
+	border:1px solid; padding:5px 10px 5px 34px; vertical-align:middle; *padding:8px 10px 4px 34px; text-shadow:0 1px 0 rgba(255, 255, 255, 0.5)}
+.ch_message_help, .ch_message.ch_help {background-color:#F6F9F3; background-position:-102px -71px; border-color #cccccc}
+.ch_message_attention, .ch_message.ch_attention {background-color:#FCF8CB; background-position:-68px -105px; border-color:#E4E2B8}
+.ch_message_check, .ch_message.ch_check {background-color:#E8FFD7; background-position:-34px -139px; border-color #C7DDBC; color:#487210}
+.ch_message_error, .ch_message.ch_error {background-color:#fbd9db; background-position:-170px -4px; border-color:#f7a9ae; color:#600}	
+.ch_message_information, .ch_message.ch_information {background-color:#E5EBFD; background-position:-136px -37px; border-color:#A0B1DE}
+.ch_message_ok, .ch_message.ch_ok {background-color:#E8FFD7; background-position:0 -173px; border-color:#C7DDBC}
+.ch_ico_process {display:inline-block; background:transparent url(../img/throbber.gif) center no-repeat; width:16px; height:16px; margin:1px auto}
+
+/* bootstrap3 手风琴样式*/
+.panel-group .panel, .panel{border-radius: 0px;}
+.mpc{margin-top: 0;margin-bottom: 0;padding-top: 10px;padding-bottom: 10px;}
+.ptb0{padding-top: 0;padding-bottom: 0;}
+
+/* bootstrap form元素间隙扩展样式--begin
+ --------------------------------*/
+.form-horizontal-small input, .form-horizontal-small textarea, .form-horizontal-small select, .form-horizontal-small .help-inline, .form-horizontal-small .uneditable-input, .form-horizontal-small .input-prepend, .form-horizontal-small .input-append 
+ {display:inline-block; *display:inline; margin-bottom:0; *zoom:1}
+.form-horizontal-small .hide {display:none}
+.form-horizontal-small .control-group {margin-bottom:8px; *zoom:1}
+.form-horizontal-small .control-group:before, .form-horizontal-small .control-group:after {display:table; content:""}
+.form-horizontal-small .control-group:after {clear:both}
+.form-horizontal-small .control-label {float:left; width:140px; padding-top:5px; text-align:right}
+.form-horizontal-small .controls {*display:inline-block; *padding-left:20px; margin-left:160px; *margin-left:0}
+.form-horizontal-small .controls:first-child {*padding-left: 160px}
+.form-horizontal-small .help-block {margin-top:9px; margin-bottom:0}
+.form-horizontal-small .form-actions {padding-left:160px}
+
+.form-horizontal input, .form-horizontal textarea, .form-horizontal select, .form-horizontal .help-inline, .form-horizontal .uneditable-input, .form-horizontal .input-prepend, .form-horizontal .input-append 
+ {display:inline-block; *display:inline; margin-bottom:0; *zoom:1}
+.form-horizontal .hide {display:none}
+.form-horizontal .control-group {margin-bottom:6px; *zoom:1}/*调整最小高度后，相应的减小的下边距，以保持原来的效果2013-4-2*/
+.form-horizontal .control-group:before, .form-horizontal .control-group:after {display:table; content:""}
+.form-horizontal .control-group:after {clear:both}
+.form-horizontal .control-label {float:left; width:140px; padding-top:5px; text-align:right}
+.form-horizontal .controls {*display:inline-block; *padding-left:20px; margin-left:160px; *margin-left:0; min-height:28px; line-height:28px}/*调整高度保持对齐*/
+.form-horizontal .controls .ui-combobox { line-height:22px}/*处理combox错位问题*/
+.form-horizontal .controls:first-child {*padding-left: 160px}
+.form-horizontal .help-block {margin-top:9px; margin-bottom:0}
+.form-horizontal .form-actions {padding-left:160px}
+
+.form-horizontal-large input, .form-horizontal-large textarea, .form-horizontal-large select, .form-horizontal-large .help-inline, .form-horizontal-large .uneditable-input, .form-horizontal-large .input-prepend, .form-horizontal-large .input-append 
+ {display:inline-block; *display:inline; margin-bottom:0; *zoom:1}
+.form-horizontal-large .hide {display:none}
+.form-horizontal-large .control-group {margin-bottom:15px; *zoom:1}/*调整最小高度后，相应的减小的下边距，以保持原来的效果2013-4-2*/
+.form-horizontal-large .control-group:before, .form-horizontal-large .control-group:after {display:table; content:""}
+.form-horizontal-large .control-group:after {clear:both}
+.form-horizontal-large .control-label {float:left; width:140px; padding-top:5px; text-align:right}
+.form-horizontal-large .controls {*display:inline-block; *padding-left:20px; margin-left:160px; *margin-left:0}
+.form-horizontal-large .controls:first-child {*padding-left: 160px}
+.form-horizontal-large .help-block {margin-top:9px; margin-bottom:0}
+.form-horizontal-large .form-actions {padding-left:160px}
+/* bootstrap form元素间隙扩展样式--end
+ --------------------------------*/

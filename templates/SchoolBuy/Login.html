@@ -1,0 +1,34 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}登录{% endblock %}
+{% block detial %}
+<link rel="stylesheet" type="text/css" href="/static/SchoolBuy/css/login.css" />
+
+<div class="wrapper">
+    <div class="content">
+        <div id="form_wrapper" class="form_wrapper">
+            <form class="login active" method="POST">
+                {{  csrf_input }}
+                <h3>Login</h3>
+                <div>
+                    <label>用户名:</label>
+                    <input type="text" name="username" />
+                    <label>{% if error %}{{ error }}{% endif %}</label>
+                </div>
+                <div>
+                    <label>密码: <a href="/comm/forgetpasswd/" rel="forgot_password" class="forgot linkform">忘记密码?</a></label>
+                    <input type="password" name="password"/>
+                    <span class="error">This is an error</span>
+                </div>
+                <div class="bottom">
+                    <input type="submit" value="Login">
+                    <a href="/register/" rel="register" class="linkform">还没有帐号？注册</a>
+                    <div class="clear"></div>
+                </div>
+
+            </form>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}

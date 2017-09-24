@@ -1,0 +1,59 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}消息提醒{% endblock %}
+{% block detial %}
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="king-block king-block-bordered">
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">未读消息 <a href="/log/manager/?method=read_new" onClick="return confirm('确定?');">标为已读</a></h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+{% for i in Newlog %}
+    <br>
+    <a href="/log/read/?id={{ i.id }}">
+    {{ i.From.Nick }}在{{ i.Owner.Title }}中给你回复了：{{ i.Mess.Words }}
+    </a>
+    <a href="/log/manager/?method=del_each&id={{ i.id }}" onClick="return confirm('确定?');"><img src="/static/SchoolBuy/images/delete.png" title="删除"> </a>
+    <br>
+{% endfor %}
+            </div>
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">已读消息 <a href="/log/manager/?method=del_old" onClick="return confirm('确定?');">删除已读</a></h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+{% for i in Oldlog %}
+    <br>
+    <a href="/log/read/?id={{ i.id }}">
+    {{ i.From.Nick }}在{{ i.Owner.Title }}中给你回复了：{{ i.Mess.Words }}
+    </a>
+    <a href="/log/manager/?method=del_each&id={{ i.id }}" onClick="return confirm('确定?');"><img src="/static/SchoolBuy/images/delete.png" title="删除"> </a>
+    <br>
+
+{% endfor %}
+            </div>
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">。。。<a href="/log/manager/?method=del_all" onClick="return confirm('确定?');">删除所有</a></h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

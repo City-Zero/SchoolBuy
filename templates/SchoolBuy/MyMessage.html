@@ -1,0 +1,54 @@
+{% extends "SchoolBuy/base.html" %}
+{% block title %}我的信息{% endblock %}
+{% block detial %}
+    <style>
+        #div-user {
+            text-align: center
+        }
+    </style>
+
+<div id="div-user">
+<a>{{ profile.Nick }}</a>
+    <img src="{{ profile.Avatar }}" width="50" height="50" class="img-circle">
+<a href="/me/edit/" class="king-btn-demo king-btn king-btn-icon king-radius king-info king-btn-mini" title="修改个人信息">
+    <i class="fa fa-cog btn-icon"></i>
+</a>
+</div>
+        <hr color="#d8d8d8">
+<a href="/me/log/">{{ log }}条未读消息</a>
+        <hr color="#d8d8d8">
+<p>我的物品</p>
+<div class="container-fluid" style="margin-top:20px;">
+    <div class="row">
+{% for i in goods %}
+
+        <div class="col-sm-6 col-lg-3">
+            <div class="king-block king-block-themed mb30">
+                <div class="king-block-header king-info">
+                    <a href="/goods/{{ i.id }}" class="king-block-title">{{ i.Title }}</a>
+                </div>
+                <div class="king-block-content">
+                    {% if i.First_pic %}
+                    <img src="{{ i.First_pic.ImgSma }}">
+
+                    {% else %}
+                    <img src = "/static/SchoolBuy/images/no_image.png">
+                    {% endif %}
+                &nbsp;&nbsp;&nbsp;
+                <a href="/edit/{{ i.id }}" class="king-btn-demo king-btn king-btn-icon king-radius king-info king-btn-big" title="编辑">
+                    <i class="fa fa-edit"></i>
+                </a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/del/good/{{ i.id }}" onClick="return confirm('确定删除?');" title="删除" class="king-btn-demo king-btn king-btn-icon king-radius king-danger  king-btn-big">
+                    <i class="fa fa-remove"></i>
+                </a>
+
+                </div>
+            </div>
+        </div>
+
+{% endfor %}
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "SchoolBuy/PushGoods.html" %}
+{% block title %}编辑商品{% endblock %}
+{% block h1 %}编辑基本信息{% endblock %}
+
+{% block delpicture %}{% endblock %}
+
+{% block addend %}
+
+{% if image %}
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="king-block king-block-bordered">
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">删除图片</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+{% for i in image %}
+    <img src="{{ i.ImgSma }}"><a href="/del/pic/?goods_id={{ id }}&image_id={{ i.id }}" onClick="return confirm('确定删除?');">删除</a>
+{% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+{% endif %}
+
+<div class="row">
+
+    <div class="col-sm-12">
+
+        <div class="king-block king-block-bordered">
+
+            <div class="king-block-header king-gray-light">
+
+                <h3 class="king-block-title">添加新图片</h3>
+
+            </div>
+
+            <div class="king-block-content">
+
+                <form class="form-horizontal" method="POST" action="/add/pic/" enctype="multipart/form-data">
+
+                    {{ csrf_input }}
+                    <div class="form-group">
+
+                        <div class="col-sm-7 col-sm-offset-3">
+
+                            <div class="demo" id="kendo_upload_demo1">
+                                <input type="hidden" value="{{ id }}" name="goods_id"> {# id为商品id #}
+
+                                <input name="image" class="file_input" type="file" multiple="multiple"/>
+                                <p class="help-block">注意，我们只会接收.jpg和.png图片</p>
+
+
+                            </div>
+
+                            <input type="submit" name="submit" class="king-btn king-success mr10" value="提交" />
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
