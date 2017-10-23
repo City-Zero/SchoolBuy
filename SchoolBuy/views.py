@@ -535,7 +535,8 @@ def change_myself(request):
 
     return render(request,'SchoolBuy/ChangeMyself.html',
                   {'profile':profile,'form':form,
-                   'pass_form':pass_form,'email_form':email_form})
+                   'pass_form':pass_form,'email_form':email_form,
+                   'user': request.user})
 
 def send_required_mail(mail,profile):
     str = (base64.b64encode(mail.encode('utf8'))).decode('utf8')
@@ -564,7 +565,8 @@ def bind_email(request):
         email_form.add_error('email','1小时内不能重复发送激活邮件')
         return render(request, 'SchoolBuy/ChangeMyself.html',
                       {'profile': profile, 'form': form,
-                       'pass_form': pass_form, 'email_form': email_form})
+                       'pass_form': pass_form, 'email_form': email_form,
+                       'user': request.user})
 
     else:
         if email_form.is_valid():
@@ -573,7 +575,8 @@ def bind_email(request):
 
         return render(request, 'SchoolBuy/ChangeMyself.html',
                       {'profile': profile, 'form': form,
-                       'pass_form': pass_form, 'email_form': email_form})
+                       'pass_form': pass_form, 'email_form': email_form,
+                       'user': request.user})
 
 
 
@@ -594,16 +597,26 @@ def change_passwd(request):
         passwd = request.POST.get('old_passwd',None)
         name = request.user.username
         user = auth.authenticate(username=name,password=passwd)
+        email_form = BindEmailForm()
         if not user:
             pass_form.add_error('old_passwd','原密码错误！')
-            return render(request, 'SchoolBuy/ChangeMyself.html', {'profile': profile, 'form': form,'pass_form':pass_form})
+            return render(request, 'SchoolBuy/ChangeMyself.html', {'profile': profile,
+                                                                   'form': form,
+                                                                   'user': request.user,
+                                                                   'email_form': email_form,
+                                                                   'pass_form':pass_form,
+                                                                   })
         if pass_form.is_valid():
             user.set_password(pass_form.cleaned_data['new_passwd'])
             user.save()
             auth.logout(request)
             request.session.clear()
             return render(request, "SchoolBuy/doing_success.html", {'mes': '修改密码'})
-    return render(request, 'SchoolBuy/ChangeMyself.html', {'profile': profile, 'form': form, 'pass_form': pass_form})
+    return render(request, 'SchoolBuy/ChangeMyself.html', {'profile': profile,
+                                                           'form': form,
+                                                           'user': request.user,
+                                                           'email_form': email_form,
+                                                           'pass_form': pass_form})
 
 @csrf_exempt
 def verifi_email(request):
