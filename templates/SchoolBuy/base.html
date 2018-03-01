@@ -11,6 +11,10 @@
     <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/styles/kendo.default.min.css" rel="stylesheet">
     <link href="https://magicbox.bkclouds.cc/static_api/v3/assets/fontawesome/css/font-awesome.css" rel="stylesheet">
     <link href="https://magicbox.bkclouds.cc/static_api/v3/bk/css/bk.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/js/jquery-1.10.2.min.js"></script>
     <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script src="https://magicbox.bkclouds.cc/static_api/v3/assets/kendoui-2015.2.624/js/kendo.all.min.js"></script>
@@ -85,7 +89,50 @@
 
 <hr color="#d8d8d8">
 <p align="center"><font face="楷体"size="2"color="#5e717f">李余通｜Copyright &copy; flycold.cn,All Rights Reserved</font></p>
-<a href="mailto:liyutong@xiyoulinux.org"><p align="center"><font face="楷体"size="2"color="#5e717f">联系我们</font></p></a>
+<div align="center">
+    <a href="mailto:liyutong@xiyoulinux.org"><span><font face="楷体"size="2"color="#5e717f">联系我们 | </font></span></a>
+<span data-toggle="modal" data-target="#myModal"><font face="楷体"size="2"color="#5e717f">捐赠我们</font></span>
+</div>
 
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+					&times;
+				</button>
+				<h4 class="modal-title" id="myModalLabel">
+					请给我们动力完善的更好
+				</h4>
+			</div>
+			<div class="modal-body" style="height: 250px">
+                <div style="float: left">
+                    <ul>
+                        <li>
+                            <img src="/static/SchoolBuy/images/PayPal.jpg" width="200" height="200">
+                        </li>
+                        <li>支付宝</li>
+                    </ul>
+                </div>
+                <div style="float: left">
+                    <ul >
+                    <li>
+                        <img src="/static/SchoolBuy/images/wechatpay.png" width="200" height="200">
+                    </li>
+                    <li>微信</li>
+                </ul>
+                </div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">关闭
+				</button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal">
+                    谢谢！
+				</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal -->
+</div>
 </body>
 </html>
