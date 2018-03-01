@@ -1,0 +1,59 @@
+header .banner {
+  width: 1200px;
+  height: 400px;
+  margin: 50px auto 0;
+}
+header .banner .slide-carousel {
+  margin-bottom: 20px;
+}
+header .banner .slide-3d .desc {
+  display: none;
+}
+header .banner .slide-3d .item-list li {
+  width: 750px;
+  height: 300px;
+  transition: all 0.5s ease-out;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+header .banner .slide-3d .item-list li.item0 {
+  transform: translate3d(-225px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item1 {
+  transform: translate3d(0, 0, 0) scale(0.8);
+  transform-origin: 0 50%;
+  opacity: 1;
+  z-index: 2;
+}
+header .banner .slide-3d .item-list li.item2 {
+  transform: translate3d(225px, 0, 0) scale(1);
+  transform-origin: 0 50%;
+  opacity: 1;
+  z-index: 3;
+}
+header .banner .slide-3d .item-list li.item3 {
+  transform: translate3d(450px, 0, 0) scale(0.8);
+  transform-origin: 100% 50%;
+  opacity: 1;
+  z-index: 2;
+}
+header .banner .slide-3d .item-list li.item4 {
+  transform: translate3d(675px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item5 {
+  transform: translate3d(900px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item6 {
+  transform: translate3d(1125px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item7 {
+  transform: translate3d(1350px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item8 {
+  transform: translate3d(1575px, 0, 0) scale(0.8);
+}
+header .banner .slide-3d .item-list li.item9 {
+  transform: translate3d(1800px, 0, 0) scale(0.8);
+}

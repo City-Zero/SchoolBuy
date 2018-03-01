@@ -11,7 +11,7 @@
 前置信息
 =======
 提前预览 http://flycold.cn
-直接克隆仓库，`python3 manager.py runserver` 即可启动。
+直接克隆仓库，`python3 manage.py runserver` 即可启动。
 后台管理地址：127.0.0.1:8000/admin/
 后台管理密码：root
             rootisgad

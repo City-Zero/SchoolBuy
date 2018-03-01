@@ -1,27 +1,88 @@
 {% extends "SchoolBuy/base.html" %}
 {% block title %}首页{% endblock %}
 {% block detial %}
-<div class="king-equal-height" >
-    <div class="king-eh-left">
-
-        <h4 class="alert-success">认准官方邮件</h4>
-        <h4 class="alert-danger">liyutong@xiyoulinux.org</h4>
-        <h4 class="alert-success">谨防受骗</h4>
-        <h3>捐赠我们</h3>
-        <img src="/static/SchoolBuy/images/PayPal.jpg" width="200" height="200">支付宝<br>
-        <img src="/static/SchoolBuy/images/wechatpay.png" width="200" height="200">微信<br>
-
-    </div>
-    <div class="king-eh-content">
-        <h3>
-            校园买，让你的闲置发挥余热！！
-        </h3>
-
-    </div>
-    <div class="king-eh-right">
-        <h4 class="alert-dismissable-">广告位招租，联系<a href="mailto:liyutong@xiyoulinux.org">我们</a></h4>
-
-        <h4 class="alert-dismissable-">有任何建议或意见，也可以联系<a href="mailto:liyutong@xiyoulinux.org">我们</a></h4>
+    <link rel="stylesheet" href="/static/SchoolBuy/css/index.css">
+    <link rel="stylesheet" href="/static/SchoolBuy/css/slide.css">
+<header>
+    <div class="banner">
+    <div id="slide3d" class="slide-carousel slide-3d">
+        <ul  class="item-list clearfix">
+            <li class="item0">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/book.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li class="item1">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/pet.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li class="item2">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/phone.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li class="item3">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/snacks.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li class="item4">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/toy.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+            <li class="item5">
+                <div class="item-content">
+                    <a href="javascript:void(0);">
+                        <img class="cover-img" src="/static/SchoolBuy/images/product.jpg" alt="">
+                    </a>
+                </div>
+            </li>
+        </ul>
+            <!--indicators-->
+        <div class="indicator-list">
+            <a href="javascript:void(0);" data-slide-index="0" class="selected">
+                <img src="/static/SchoolBuy/images/phone.png" alt="">
+            </a>
+            <a href="javascript:void(0);" data-slide-index="1">
+                <img src="/static/SchoolBuy/images/snacks.png" alt="">
+            </a>
+            <a href="javascript:void(0);" data-slide-index="2">
+                <img src="/static/SchoolBuy/images/toy.png" alt="">
+            </a>
+            <a href="javascript:void(0);" data-slide-index="3">
+                <img src="/static/SchoolBuy/images/product.png" alt="">
+            </a>
+            <a href="javascript:void(0);" data-slide-index="4">
+                <img class="cover-img" src="/static/SchoolBuy/images/book.png" alt="">
+            </a>
+            <a href="javascript:void(0);" data-slide-index="5">
+                <img class="cover-img" src="/static/SchoolBuy/images/pet.png" alt="">
+            </a>
+        </div>
+        <!--controls-->
+        <div class="controls">
+            <a  class="item-prev glyphicon glyphicon-menu-left" href="javascript:void(0);"></a>
+            <a  class="item-next glyphicon glyphicon-menu-right" href="javascript:void(0);"></a>
+        </div>
     </div>
 </div>
+</header>
+    <script src = "/static/SchoolBuy/js/index.js"></script>
+    <script>
+       $(function(){
+        $('#slide3d').slideCarsousel({slideType:'3d',indicatorEvent:'mouseover'});
+    });
+    </script>
 {% endblock %}
